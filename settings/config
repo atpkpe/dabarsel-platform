@@ -1,0 +1,10 @@
+clientdir : atp
+domain : atp.dk
+mysqlpassdev : cc83da4c170e865d07b4
+mysqlpasstest : de457e00d3bc7e2adfe4
+mysqlpasslive : 2bc42109cbf6db358db3
+cronkey : cron-b4d0fb22d1240c65749f
+htaccesspassdev : d3e095261e
+htaccesspasstest : edee40866d
+htaccesspasslive : 3f4abd3e41
+adaptadminpass : 1a32b3635e28dc5c43d6
