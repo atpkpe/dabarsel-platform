@@ -6,5 +6,6 @@ if pushd "htdocs/sites/default" > /dev/null; then
   drush vset cron_key "cron-b4d0fb22d1240c65749f"
 
   # Run development setup tasks.
+  echo "Devifying..."
   popd > /dev/null && ./devify.sh
 fi
