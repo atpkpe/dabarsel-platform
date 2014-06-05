@@ -6,7 +6,7 @@ $databases['default']['default'] = array(
   'database' => 'atp_local',
   'username' => 'root',
   'password' => 'root',
-  'host' => 'localhost',
+  'host' => '127.0.0.1',
   'prefix' => '',
 );
 
