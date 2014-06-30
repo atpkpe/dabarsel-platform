@@ -1,3 +1,8 @@
+
 fieldset.filter-wrapper a.fieldset-title {
   font-size:0.7em;
+}
+
+fieldset.group-page-twt fieldset.filter-wrapper {
+  display:none;
 }
