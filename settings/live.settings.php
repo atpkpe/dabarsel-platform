@@ -10,6 +10,8 @@ $databases['default']['default'] = array(
   'prefix' => '',
 );
 
+$conf['workbench_moderation_per_node_type'] = TRUE;
+
 // Preproccesing of js/css
 $conf['preprocess_css'] = 1;
 $conf['preprocess_js'] = 1;
