@@ -10,6 +10,8 @@ $databases['default']['default'] = array(
   'prefix' => '',
 );
 
+$conf['workbench_moderation_per_node_type'] = TRUE;
+
 // Preproccesing of js/css
 $conf['preprocess_css'] = 1;
 $conf['preprocess_js'] = 1;
@@ -20,7 +22,6 @@ $conf['cache'] = 1;
 
 // Error reporting
 $conf['error_level'] = 0;
-
 
 $update_free_access = FALSE;
 $drupal_hash_salt = '';
