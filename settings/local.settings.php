@@ -15,9 +15,9 @@ $databases['default']['default'] = array(
 $conf['stage_file_proxy_origin'] = 'http://atp.fe.test.cd.adapt.dk';
 $conf['stage_file_proxy_origin_dir'] = 'sites/default/files';
 
-$conf['cache_backends'][] = 'profiles/atp/modules/contrib/memcache/memcache.inc';
-$conf['cache_default_class'] = 'MemCacheDrupal';
-$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+# $conf['cache_backends'][] = 'profiles/atp/modules/contrib/memcache/memcache.inc';
+# $conf['cache_default_class'] = 'MemCacheDrupal';
+# $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 
 $update_free_access = FALSE;
 $drupal_hash_salt = '';
