@@ -5,7 +5,7 @@ $databases['default']['default'] = array(
   'driver' => 'mysql',
   'database' => 'atpstage_test',
   'username' => 'atpstage_test',
-  'password' => '',
+  'password' => '2bc42109cbf6db358db3',
   'host' => 'atpstage.mysql.test.cd.adapt.dk',
   'prefix' => '',
 );
