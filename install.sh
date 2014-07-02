@@ -15,7 +15,6 @@ if pushd "htdocs/sites/default" > /dev/null; then
     then
       drush l10n-update-refresh
       drush l10n-update 
-      drush @atp language-import da profiles/atp/translations/default-da.po --group=default
     else
       echo "l10n_update could not be found. Please activate it."
     fi
