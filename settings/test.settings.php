@@ -10,6 +10,8 @@ $databases['default']['default'] = array(
   'prefix' => '',
 );
 
+$conf['file_entity_allow_insecure_download'] = TRUE;
+
 # $conf['workbench_moderation_per_node_type'] = TRUE;
 
 // Preproccesing of js/css

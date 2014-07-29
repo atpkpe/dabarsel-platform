@@ -23,6 +23,8 @@ $conf['memcache_persistent'] = TRUE;
 $conf['memcache_key_prefix'] = 'atp';
 $conf['memcache_servers'] = array('memcache.service.vm.adapt.dk:11211' => 'default');
 
+$conf['file_entity_allow_insecure_download'] = TRUE;
+
 # $conf['workbench_moderation_per_node_type'] = TRUE;
 
 // Preproccesing of js/css
