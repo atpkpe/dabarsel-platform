@@ -12,6 +12,9 @@ $databases['default']['default'] = array(
 
 $conf['file_entity_allow_insecure_download'] = TRUE;
 
+$conf['stage_file_proxy_origin'] = 'http://atpstage.fe.test.cd.adapt.dk';
+$conf['stage_file_proxy_origin_dir'] = 'sites/default/files';
+
 # $conf['workbench_moderation_per_node_type'] = TRUE;
 
 // Preproccesing of js/css
