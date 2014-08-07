@@ -3,12 +3,29 @@
 $databases = array();
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => 'atp_live',
-  'username' => 'atp_live',
+  'database' => 'atpstage_test',
+  'username' => 'atpstage_test',
   'password' => '2bc42109cbf6db358db3',
-  'host' => 'atp.mysql.live.cd.adapt.dk',
+  'host' => 'atpstage.mysql.test.cd.adapt.dk',
   'prefix' => '',
 );
+
+# Make memcache the default memcache backend.
+$conf['cache_backends'][] = 'profiles/atp/modules/contrib/memcache/memcache.inc';
+$conf['cache_default_class'] = 'MemCacheDrupal';
+
+# cache_form should always use a non-volatile caching engine.
+$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+
+$conf['memcache_bins'] = array('cache' => 'default');
+
+$conf['memcache_persistent'] = TRUE;
+$conf['memcache_key_prefix'] = 'atp';
+$conf['memcache_servers'] = array('memcache.service.vm.adapt.dk:11211' => 'default');
+
+$conf['file_entity_allow_insecure_download'] = TRUE;
+
+# $conf['workbench_moderation_per_node_type'] = TRUE;
 
 // Preproccesing of js/css
 $conf['preprocess_css'] = 1;
