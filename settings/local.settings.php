@@ -10,6 +10,12 @@ $databases['default']['default'] = array(
   'prefix' => '',
 );
 
+# SMTP server settings
+$conf['smtp_on'] = '1';
+$conf['smtp_allowhtml'] = '1';
+$conf['smtp_host'] = '127.0.0.1';
+$conf['smtp_port'] = '1025';
+
 $conf['file_entity_allow_insecure_download'] = TRUE;
 
 # $conf['workbench_moderation_per_node_type'] = TRUE;
