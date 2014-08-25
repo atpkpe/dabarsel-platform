@@ -12,6 +12,14 @@ $databases['default']['default'] = array(
 
 $conf['file_entity_allow_insecure_download'] = TRUE;
 
+# SMTP server settings
+$conf['smtp_on'] = '1';
+$conf['smtp_allowhtml'] = '1';
+$conf['smtp_host'] = '127.0.0.1';
+$conf['smtp_port'] = '25';
+$conf['smtp_library'] = 'profiles/atp/modules/contrib/smtp/smtp.module';
+$conf['mail_system']['default-system'] = 'SmtpMailSystem'; 
+
 $conf['stage_file_proxy_origin'] = 'http://atpstage.fe.test.cd.adapt.dk';
 $conf['stage_file_proxy_origin_dir'] = 'sites/default/files';
 
