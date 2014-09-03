@@ -8,6 +8,7 @@ core = 7.x
 ; This will download the Drupal core version that the installation profile will
 ; be built on. This should be updated as newer versions of Drupal get released.
 projects[drupal] = 7.31
+projects[drupal][patch][] = "http://svnhosttest.adapt.dk/atp-platform.patch"
 
 projects[atp][type] = profile
 projects[atp][download][type] = git
