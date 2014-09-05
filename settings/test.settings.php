@@ -20,10 +20,22 @@ $conf['smtp_port'] = '25';
 $conf['smtp_library'] = 'profiles/atp/modules/contrib/smtp/smtp.module';
 $conf['mail_system']['default-system'] = 'SmtpMailSystem'; 
 
+# Make memcache the default memcache backend.
+$conf['cache_backends'][] = 'profiles/atp/modules/contrib/memcache/memcache.inc';
+$conf['cache_default_class'] = 'MemCacheDrupal';
+
+# cache_form should always use a non-volatile caching engine.
+$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+
+$conf['memcache_bins'] = array('cache' => 'default');
+
+$conf['memcache_persistent'] = TRUE;
+$conf['memcache_key_prefix'] = 'atpshow';
+$conf['memcache_servers'] = array('memcache.service.vm.adapt.dk:11211' => 'default');
+
+# Stage file proxy settings
 $conf['stage_file_proxy_origin'] = 'http://atpstage.fe.test.cd.adapt.dk';
 $conf['stage_file_proxy_origin_dir'] = 'sites/default/files';
-
-# $conf['workbench_moderation_per_node_type'] = TRUE;
 
 // Preproccesing of js/css
 $conf['preprocess_css'] = 1;
