@@ -15,12 +15,12 @@ $conf['smtp_on'] = '1';
 $conf['smtp_allowhtml'] = '1';
 $conf['smtp_host'] = '127.0.0.1';
 $conf['smtp_port'] = '1025';
+$conf['smtp_library'] = 'profiles/atp/modules/contrib/smtp/smtp.module';
+$conf['mail_system']['default-system'] = 'SmtpMailSystem';
 
 $conf['file_entity_allow_insecure_download'] = TRUE;
 
-# $conf['workbench_moderation_per_node_type'] = TRUE;
-
-$conf['stage_file_proxy_origin'] = 'http://atp.fe.test.cd.adapt.dk';
+$conf['stage_file_proxy_origin'] = 'http://atpstage.fe.test.cd.adapt.dk';
 $conf['stage_file_proxy_origin_dir'] = 'sites/default/files';
 
 # $conf['cache_backends'][] = 'profiles/atp/modules/contrib/memcache/memcache.inc';
