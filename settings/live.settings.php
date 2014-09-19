@@ -44,6 +44,8 @@ $conf['cache'] = 1;
 // Error reporting
 $conf['error_level'] = 0;
 
+// Compression
+$conf['page_compression'] = FALSE;
 
 $update_free_access = FALSE;
 $drupal_hash_salt = '';
