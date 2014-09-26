@@ -1,3 +1,3 @@
 #!/bin/bash
 
-touch miktest
+touch /tmp/miktest
