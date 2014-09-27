@@ -1,9 +1,9 @@
 #!/bin/bash
 
-touch /tmp/miktest
-#mkdir deploy_pkg_${BUILD_NUMBER}
-#touch environment_${Environment}
+PKG_NAME=$1
+BUILD_SRC="build/${2}"
 
-echo $1
-echo $2
-echo $3
+if [ -d "$BUILD_SRC" ]; then
+  mkdir -p ${PKG_NAME}/builds
+  cp -rp $BUILD_SRC ${PKG_NAME}/builds/
+fi
