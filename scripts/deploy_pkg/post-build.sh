@@ -54,5 +54,5 @@ if [ "$INCLUDE_ADDITIONALS" == "true" ] && [ -f ${SQL_FILE} ]; then
 fi
 
 sudo chown $UIDGID_DEPLOY $DIR_PKG && tar -czf $TAR_BALL $DIR_PKG
-sudo chown -R jenkins:jenkins $DIR_PKG $DIR_TMP 
+sudo chown -R jenkins:jenkins $DIR_PKG $DIR_TMP && rm -rf $DIR_PKG $DIR_TMP 
 
