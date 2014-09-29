@@ -60,5 +60,13 @@ if [ "$INCLUDE_ADDITIONALS" == "true" ] && [ -f ${SQL_FILE} ]; then
 fi
 
 sudo chown $UIDGID_DEPLOY $DIR_PKG && tar -czf $TAR_BALL $DIR_PKG
-sudo chown -R jenkins:jenkins $DIR_PKG $DIR_TMP
 find -name "atp.${ENVIRONMENT}.*.tar.gz" -not -name "$TAR_BALL" -exec rm {} \;
+if [ -d "$DIR_PKG" ]; then
+  sudo chown -R jenkins:jenkins $DIR_PKG
+  rm -rf $DIR_PKG
+fi
+if [ -d "$DIR_TMP" ]; then
+  sudo chown -R jenkins:jenkins $DIR_TMP
+  rm -rf $DIR_TMP
+fi
+
