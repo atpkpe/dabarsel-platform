@@ -10,16 +10,9 @@ DIR_BUILDS="${DIR_TMP}/builds"
 UIDGID_DEPLOY="8001:8001"
 UIDGID_APACHE="48:48"
 
-
 BUILD_TARGET=${DIR_BUILDS}/$(basename $PATH_TO_BUILD)
 BUILD_NUMBER=$(echo $PATH_TO_BUILD | sed 's/[^0-9]\+\([0-9]\+\)$/\1/')
-
-#echo $INCLUDE_ADDITIONALS
-#exit
-#if [ "$INCLUDE_ADDITIONALS" == "true" ]; then
-#  echo "additionals included!!!!!!!!!!!!!!!!!!!!!"
-#fi
-#exit
+TAR_BALL="atp.${ENVIRONMENT}.${BUILD_NUMBER}.tar.gz"
 
 mkdir $DIR_PKG
 mkdir $DIR_TMP
@@ -69,6 +62,6 @@ if [ -f ${SQL_FILE} ]; then
  # sudo rm -rf $DIR_TMP
 fi
 
-sudo chown $UIDGID_DEPLOY $DIR_PKG && tar -czf atp.${ENVIRONMENT}.${BUILD_NUMBER}.tar.gz $DIR_PKG
-sudo chown -R jenkins:jenkins $DIR_PKG $DIR_TMP && rm -rf $DIR_PKG $DIR_TMP
+sudo chown $UIDGID_DEPLOY $DIR_PKG && tar -czf $TAR_BALL $DIR_PKG
+sudo chown -R jenkins:jenkins $DIR_PKG $DIR_TMP && find . -not -name "$TAR_BALL" -exec rm -rf {} \;
 
