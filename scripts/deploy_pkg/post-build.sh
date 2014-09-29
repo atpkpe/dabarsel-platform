@@ -16,11 +16,11 @@ TAR_BALL="atp.${ENVIRONMENT}.${BUILD_NUMBER}.tar.gz"
 
 if [ -d "$DIR_PKG" ]; then
   sudo chown -R jenkins:jenkins $DIR_PKG
-  rm $DIR_PKG
+  rm -rf $DIR_PKG
 fi
 if [ -d "$DIR_TMP" ]; then
   sudo chown -R jenkins:jenkins $DIR_TMP
-  rm $DIR_TMP
+  rm -rf $DIR_TMP
 fi
 
 mkdir $DIR_PKG
