@@ -14,6 +14,8 @@ BUILD_TARGET=${DIR_BUILDS}/$(basename $PATH_TO_BUILD)
 BUILD_NUMBER=$(echo $PATH_TO_BUILD | sed 's/[^0-9]\+\([0-9]\+\)$/\1/')
 TAR_BALL="atp.${ENVIRONMENT}.${BUILD_NUMBER}.tar.gz"
 
+sudo chown -R jenkins:jenkins $DIR_PKG $DIR_TMP > /dev/null
+rm -rf $DIR_PKG $DIR_TMP > /dev/null
 mkdir $DIR_PKG
 mkdir $DIR_TMP
 
@@ -54,5 +56,4 @@ if [ "$INCLUDE_ADDITIONALS" == "true" ] && [ -f ${SQL_FILE} ]; then
 fi
 
 sudo chown $UIDGID_DEPLOY $DIR_PKG && tar -czf $TAR_BALL $DIR_PKG
-sudo chown -R jenkins:jenkins $DIR_PKG $DIR_TMP && rm -rf $DIR_PKG $DIR_TMP 
 
