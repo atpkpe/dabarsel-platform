@@ -42,17 +42,8 @@ if [ "$INCLUDE_ADDITIONALS" == "true" ] && [ -d "$DIR_ADDITIONAL_CONTENT/assets"
  # sudo rm -rf $DIR_TMP
 fi
 
-if [ "$INCLUDE_ADDITIONALS" == "true" ] && [ -f "$DIR_ADDITIONAL_CONTENT/*.sql" ]; then
-  cp $DIR_ADDITIONAL_CONTENT/*.sql ${DIR_TMP}/ &&
-  pushd ${DIR_TMP} &&
-  sudo chown $UIDGID_DEPLOY *.sql &&
-  tar -czf db.sql.tar.gz *.sql
-  mv ${DIR_TMP}/db.sql.tar.gz $DIR_PKG/
- # sudo rm -rf $DIR_TMP
-fi
-
 SQL_FILE=$(find $DIR_ADDITIONAL_CONTENT -type f \( -name "*.sql" \) )
-if [ -f ${SQL_FILE} ]; then
+if [ "$INCLUDE_ADDITIONALS" == "true" ] && [ -f ${SQL_FILE} ]; then
   cp $SQL_FILE ${DIR_TMP}/ &&
   pushd ${DIR_TMP} &&
   sudo chown $UIDGID_DEPLOY *.sql &&
