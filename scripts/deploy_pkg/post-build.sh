@@ -54,5 +54,5 @@ if [ "$INCLUDE_ADDITIONALS" == "true" ] && [ -f ${SQL_FILE} ]; then
 fi
 
 sudo chown $UIDGID_DEPLOY $DIR_PKG && tar -czf $TAR_BALL $DIR_PKG
-sudo chown -R jenkins:jenkins $DIR_PKG $DIR_TMP && find . -not -name "$TAR_BALL" -not -name "scripts/deploy_pkg/post-build.sh" -exec rm -rf {} \;
+sudo chown -R jenkins:jenkins $DIR_PKG $DIR_TMP 
 
