@@ -61,4 +61,4 @@ fi
 
 sudo chown $UIDGID_DEPLOY $DIR_PKG && tar -czf $TAR_BALL $DIR_PKG
 sudo chown -R jenkins:jenkins $DIR_PKG $DIR_TMP
-find -name "atp.${ENVIRONMENT}.*.tar.gz" -exec rm {} \;
+find -name "atp.${ENVIRONMENT}.*.tar.gz" -not -name "$TAR_BALL" -exec rm {} \;
