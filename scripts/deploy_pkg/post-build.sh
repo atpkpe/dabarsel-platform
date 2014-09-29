@@ -29,7 +29,6 @@ if [ -d "$PATH_TO_BUILD" ]; then
     pushd ${DIR_TMP} && sudo chown -R 8001:8001 builds && tar -czf builds.tar.gz builds
     popd
     mv ${DIR_TMP}/builds.tar.gz $DIR_PKG/
-#    sudo rm -rf $DIR_TMP
   fi
 fi
 
@@ -41,7 +40,6 @@ if [ "$INCLUDE_ADDITIONALS" == "true" ] && [ -d "$DIR_ADDITIONAL_CONTENT/assets"
   tar -czf assets.tar.gz assets
   popd
   mv ${DIR_TMP}/assets.tar.gz $DIR_PKG/
- # sudo rm -rf $DIR_TMP
 fi
 
 SQL_FILE=$(find $DIR_ADDITIONAL_CONTENT -type f \( -name "*.sql" \) )
@@ -52,9 +50,8 @@ if [ "$INCLUDE_ADDITIONALS" == "true" ] && [ -f ${SQL_FILE} ]; then
   tar -czf db.sql.tar.gz *.sql
   popd
   mv ${DIR_TMP}/db.sql.tar.gz $DIR_PKG/
- # sudo rm -rf $DIR_TMP
 fi
 
 sudo chown $UIDGID_DEPLOY $DIR_PKG && tar -czf $TAR_BALL $DIR_PKG
 sudo chown -R jenkins:jenkins $DIR_PKG $DIR_TMP > /dev/null
-
+find -name "atp.${ENVIRONMENT}.*.tar.gz" -exec rm {} \;
