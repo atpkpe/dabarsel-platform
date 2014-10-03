@@ -9,6 +9,7 @@ core = 7.x
 ; be built on. This should be updated as newer versions of Drupal get released.
 projects[drupal] = 7.31
 projects[drupal][patch][] = "http://svnhosttest.adapt.dk/atp-platform.patch"
+projects[drupal][patch][] = patches/atp-compression.patch
 
 projects[atp][type] = profile
 projects[atp][download][type] = git
