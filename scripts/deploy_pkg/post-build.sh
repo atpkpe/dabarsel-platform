@@ -32,6 +32,10 @@ if [ -d "$PATH_TO_BUILD" ]; then
     ln -s ../../../settings/${ENVIRONMENT}.settings.php settings.php
     popd
   fi
+  if [ -d "${BUILD_TARGET}/htdocs/sites/default" ] && [ -d "../../../../assets/files" ] && pushd "${BUILD_TARGET}/htdocs/sites/default"; then
+    ln -s ../../../../assets/files files
+    popd
+  fi
   if [ -d "${DIR_BUILDS}" ]; then
     pushd ${DIR_TMP} && sudo chown -R 8001:8001 builds && tar -czf builds.tar.gz builds
     popd
