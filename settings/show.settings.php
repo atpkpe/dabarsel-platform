@@ -3,12 +3,14 @@
 $databases = array();
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => 'atpstage_live',
-  'username' => 'atpstage_live',
-  'password' => 'duejCismocodpykDuvjo',
-  'host' => 'localhost',
+  'database' => 'atpshow_test',
+  'username' => 'atpshow_test',
+  'password' => '',
+  'host' => 'atpshow.mysql.test.cd.adapt.dk',
   'prefix' => '',
 );
+
+$conf['file_entity_allow_insecure_download'] = TRUE;
 
 # SMTP server settings
 $conf['smtp_on'] = '1';
@@ -26,12 +28,12 @@ $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 $conf['memcache_bins'] = array('cache' => 'default');
 
 $conf['memcache_persistent'] = TRUE;
-$conf['memcache_key_prefix'] = 'atp';
-$conf['memcache_servers'] = array('localhost:11211' => 'default');
+$conf['memcache_key_prefix'] = 'atpshow';
+$conf['memcache_servers'] = array('memcache.service.vm.adapt.dk:11211' => 'default');
 
-$conf['file_entity_allow_insecure_download'] = TRUE;
-
-# $conf['workbench_moderation_per_node_type'] = TRUE;
+# Stage file proxy settings
+$conf['stage_file_proxy_origin'] = 'http://atpstage.fe.test.cd.adapt.dk';
+$conf['stage_file_proxy_origin_dir'] = 'sites/default/files';
 
 // Preproccesing of js/css
 $conf['preprocess_css'] = 1;
@@ -43,9 +45,6 @@ $conf['cache'] = 1;
 
 // Error reporting
 $conf['error_level'] = 0;
-
-// Compression
-$conf['page_compression'] = FALSE;
 
 $update_free_access = FALSE;
 $drupal_hash_salt = '';

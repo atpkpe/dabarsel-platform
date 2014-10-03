@@ -3,10 +3,10 @@
 $databases = array();
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => 'atpshow_test',
-  'username' => 'atpshow_test',
-  'password' => '',
-  'host' => 'atpshow.mysql.test.cd.adapt.dk',
+  'database' => 'atpstage_test',
+  'username' => 'atpstage_test',
+  'password' => '2bc42109cbf6db358db3',
+  'host' => 'localhost',
   'prefix' => '',
 );
 
@@ -28,8 +28,8 @@ $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 $conf['memcache_bins'] = array('cache' => 'default');
 
 $conf['memcache_persistent'] = TRUE;
-$conf['memcache_key_prefix'] = 'atpshow';
-$conf['memcache_servers'] = array('memcache.service.vm.adapt.dk:11211' => 'default');
+$conf['memcache_key_prefix'] = 'atptest';
+$conf['memcache_servers'] = array('localhost:11211' => 'default');
 
 # Stage file proxy settings
 $conf['stage_file_proxy_origin'] = 'http://atpstage.fe.test.cd.adapt.dk';
