@@ -32,7 +32,7 @@ if [ -d "$PATH_TO_BUILD" ]; then
     ln -s ../../../settings/${ENVIRONMENT}.settings.php settings.php
     popd
   fi
-  if [ -d "${BUILD_TARGET}/htdocs/sites/default" ] && [ -d "../../../../assets/files" ] && pushd "${BUILD_TARGET}/htdocs/sites/default"; then
+  if [ -d "${BUILD_TARGET}/htdocs/sites/default" ] && pushd "${BUILD_TARGET}/htdocs/sites/default"; then
     ln -s ../../../../assets/files files
     popd
   fi
