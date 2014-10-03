@@ -6,7 +6,7 @@ $databases['default']['default'] = array(
   'database' => 'atpstage_test',
   'username' => 'atpstage_test',
   'password' => '2bc42109cbf6db358db3',
-  'host' => 'localhost',
+  'host' => 'atpstage.mysql.test.cd.adapt.dk',
   'prefix' => '',
 );
 
