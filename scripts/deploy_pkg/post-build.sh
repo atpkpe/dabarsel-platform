@@ -33,7 +33,7 @@ if [ -d "$PATH_TO_BUILD" ]; then
     popd
   fi
   if [ -d "${BUILD_TARGET}/htdocs/sites/default" ] && pushd "${BUILD_TARGET}/htdocs/sites/default"; then
-    ln -s ../../../../assets/files files
+    ln -s ../../../../../assets/files files
     popd
   fi
   if [ -d "${DIR_BUILDS}" ]; then
