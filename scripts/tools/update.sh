@@ -3,7 +3,7 @@
 # Set environment
 THIS=$(readlink -f $0)
 THIS_DIR=`dirname $THIS`
-DRUPAL_ROOT=$THIS_DIR/../../site/htdocs
+DRUPAL_ROOT=$THIS_DIR/../../htdocs
 
 # Run drush cmds
 drush --root=$DRUPAL_ROOT updb -y
