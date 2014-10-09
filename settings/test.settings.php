@@ -31,10 +31,6 @@ $conf['memcache_persistent'] = TRUE;
 $conf['memcache_key_prefix'] = 'atptest';
 $conf['memcache_servers'] = array('localhost:11211' => 'default');
 
-# Stage file proxy settings
-$conf['stage_file_proxy_origin'] = 'http://atpstage.fe.test.cd.adapt.dk';
-$conf['stage_file_proxy_origin_dir'] = 'sites/default/files';
-
 // Preproccesing of js/css
 $conf['preprocess_css'] = 1;
 $conf['preprocess_js'] = 1;
