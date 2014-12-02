@@ -13,5 +13,5 @@ projects[drupal][patch][] = "http://svnhosttest.adapt.dk/atp-compression.patch"
 
 projects[atp][type] = profile
 projects[atp][download][type] = git
-projects[atp][download][url] = git@githost:/data/git/drupal/atp/sites/atp/profile.git
+projects[atp][download][url] = git@githost:/data/git/drupal/atp/sites/atp/platform.git
 
