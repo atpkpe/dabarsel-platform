@@ -3,7 +3,7 @@
 $databases = array();
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => 'atp_local',
+  'database' => 'dabarsel_local',
   'username' => 'root',
   'password' => 'root',
   'host' => '127.0.0.1',
