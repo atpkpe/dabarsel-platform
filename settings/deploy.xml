@@ -4,11 +4,16 @@
 
 	<target name="properties">
 	  <property name="make.dir" value="htdocs" />
-	  <property name="remote.host" value="localhost" />
 	  <property name="remote.path" value="/tmp" />
 	  <property name="remote.drush" value="/usr/local/bin/drush" />
 	  
-	  <if><not><isset property="environment" /></not>
+	  <if><not><isset property="remote.host" /></not>
+            <then>
+              <property name="remote.host" value="localhost" />
+            </then>
+          </if>
+         
+         <if><not><isset property="environment" /></not>
             <then>
               <property name="environment" value="test" />
             </then>
