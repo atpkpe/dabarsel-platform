@@ -15,9 +15,12 @@
 	    <param>"${WORKSPACE}/${make.dir}"</param>
 	    <param>--contrib-destination=profiles/${profile.name}</param>
 	  </drush>
-          <echo file="${WORKSPACE}/${make.dir}/build.txt">${env.BUILD_TAG}</echo>
 	</target>
-
+        
+        <target name="create-build-file">
+          <echo file="${WORKSPACE}/${make.dir}/build.txt">${env.BUILD_TAG}</echo>
+        </target>
+        
 	<taskdef name="drush" classname="DrushTask" classpath="phingdrushtask"/>
 
 </project>
