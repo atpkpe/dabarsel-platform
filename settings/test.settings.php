@@ -3,9 +3,9 @@
 $databases = array();
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => 'atpstage_test',
-  'username' => 'atpstage_test',
-  'password' => '2bc42109cbf6db358db3',
+  'database' => 'dabarsel_test',
+  'username' => 'root',
+  'password' => 'root',
   'host' => 'localhost',
   'prefix' => '',
 );
@@ -28,7 +28,7 @@ $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 $conf['memcache_bins'] = array('cache' => 'default');
 
 $conf['memcache_persistent'] = TRUE;
-$conf['memcache_key_prefix'] = 'atptest';
+$conf['memcache_key_prefix'] = 'dabarseltest';
 $conf['memcache_servers'] = array('localhost:11211' => 'default');
 
 // Preproccesing of js/css
