@@ -27,6 +27,12 @@
 
   	</target>
 
+       <target name="post-deploy" depends="remote-drush-updb,
+                                      remote-drush-cc-drush,
+                                      remote-drush-fra,
+                                      remote-drush-cc-all">
+        </target>
+
         <taskdef classname="VersionNumberTask" name="versiontask" classpath="phingdrushtask" />
         <target name="buildname">
           <versiontask versionprop="build.name"/>
