@@ -22,7 +22,7 @@
 	</target>
 
 	<target name="deploy" depends="buildname, properties">
-	  <echo msg="Deploying ${build.name} to server" />
+	  <echo msg="Deploying  ${environment} build ${build.name} to ${remote.host}" />
 	  <ssh  username="jenkins" privkeyfile="/home/jenkins/.ssh/id_rsa" pubkeyfile="/home/jenkins/.ssh/id_rsa.pub" host="${remote.host}" command="mkdir ${remote.path}/builds/${build.name}"/>
 	  <exec command="scp -rq ../${make.dir} ${remote.host}:${remote.path}/builds/${build.name}" logoutput="yes" />
 	  <exec command="scp -rq ../settings ${remote.host}:${remote.path}/builds/${build.name}" logoutput="yes" />
