@@ -18,7 +18,7 @@
 	</target>
         
         <target name="create-build-file">
-          <touch file="../${make.dir}/build.txt" />
+          <touch file="../htdocs/build.txt" />
           <echo file="../${make.dir}/build.txt">${env.BUILD_TAG}</echo>
         </target>
         
