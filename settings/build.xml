@@ -6,7 +6,7 @@
 	  <property name="make.file" value="platform.make" />
 	  <property name="make.dir" value="htdocs" />
 	  <property name="profile.name" value="atp" />
-	  <property name="drush.bin" value="/usr/local/share/drush-6.5.0/drush" />
+	  <property name="drush.bin" value="/usr/local/bin/drush" />
 	</target>
 
 	<target name="build" depends="properties">
