@@ -15,7 +15,7 @@
 	  <exec command="scp -rq ../${make.dir} ${remote.host}:${remote.path}/builds/${build.name}/htdocs" logoutput="yes" />
 	  <exec command="scp -rq ../settings ${remote.host}:${remote.path}/builds/${build.name}/settings" logoutput="yes" />
 	  
-	  <ssh host="${remote.host}" command="
+	  <ssh username="jenkins" privkeyfile="/home/jenkins/.ssh/id_rsa" host="${remote.host}" command="
              cd ${remote.path}/builds/${build.name}/htdocs/sites/default &amp;&amp;
              ln -s ../../../settings/${environment}.settings.php settings.php &amp;&amp;
              ln -s ../../../../../assets/files files &amp;&amp;
