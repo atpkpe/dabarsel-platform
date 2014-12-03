@@ -75,4 +75,15 @@
 	    command="cd ${remote.path}/builds/${build.name}/htdocs/sites/default &amp;&amp; ${remote-drush} cc all"/>
        </target>
 
+      <target name="remote-remove-old-builds" if="builds.keep" >
+	   <php expression="${builds.keep} + 1" returnProperty="builds.tail"/>
+	    <ssh username="jenkins" host="${remote.host}"
+	    privkeyfile="/home/jenkins/.ssh/id_rsa"
+	    pubkeyfile="/home/jenkins/.ssh/id_rsa.pub"
+	    command="
+	    cd ${remote.path}/builds &amp;&amp;
+	    rm -rf $(ls -t | tail -n +${builds.tail})"/>
+	    <property name="remote-removed-old-builds" value="true" />
+      </target>
+
 </project>
