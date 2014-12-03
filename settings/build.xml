@@ -18,7 +18,7 @@
 	</target>
         
         <target name="create-build-file">
-          <echo file="${WORKSPACE}/${make.dir}/build.txt">${env.BUILD_TAG}</echo>
+          <echo file="${make.dir}/build.txt">${env.BUILD_TAG}</echo>
         </target>
         
 	<taskdef name="drush" classname="DrushTask" classpath="phingdrushtask"/>
