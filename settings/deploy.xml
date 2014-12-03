@@ -6,12 +6,20 @@
 	  <property name="make.dir" value="htdocs" />
 	  <property name="remote.host" value="localhost" />
 	  <property name="remote.path" value="/tmp" />
+	  <property name="environment" value="test" />
 	</target>
 
 	<target name="deploy" depends="buildname, properties">
 	  <echo msg="Deploying ${build.name} to server" />
-	  <exec command="scp -rq ../${make.dir} ${remote.host}:${remote.path}/builds/${build.name}" 
-	    logoutput="yes" />
+	  <exec command="scp -rq ../${make.dir} ${remote.host}:${remote.path}/builds/${build.name}/" logoutput="yes" />
+	  
+	  <ssh host="${remote.host}" command="
+             cd ${remote.path}/builds/${build.name}/htdocs/sites/default &amp;&amp;
+             ln -s ../../../settings/${environment}.settings.php settings.php &amp;&amp;
+             ln -s ../../../../../assets/files files &amp;&amp;
+             cd ${remote.path} &amp;&amp;
+             ln -sfn builds/${build.name} site"/>
+	  
   	</target>
 
         <taskdef classname="VersionNumberTask" name="versiontask" classpath="phingdrushtask" />
