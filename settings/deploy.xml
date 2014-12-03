@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="phing-drupal" default="deploy">
+
+	<target name="properties">
+	  <property name="make.dir" value="htdocs" />
+	  <property name="remote.host" value="localhost" />
+	  <property name="remote.path" value="/tmp" />
+	</target>
+
+	<target name="deploy" depends="properties">
+	  
+	  <exec command="scp -rq -i ${make.dir} \
+                  ${remote.host}:${remote.path}/builds/`echo ../htdocs/build.txt`" />
+    
+	</target>
+
+</project>
