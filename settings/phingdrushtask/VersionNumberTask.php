@@ -18,6 +18,7 @@ class VersionNumberTask extends Task
     {
         // read the version text file in to a variable
         $version = file_get_contents("../htdocs/build.txt");
+        $version = trim(preg_replace('/\s+/', '', $version));
         $this->project->setProperty($this->versionprop, $version);
     }
 }
