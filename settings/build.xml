@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="phing-drupal" default="build">
+
+	<target name="properties">
+	  <property name="make.file" value="platform.make" />
+	  <property name="make.dir" value="htdocs" />
+	  <property name="profile.name" value="atp" />
+	  <property name="drush.bin" value="/usr/local/share/drush-6.5.0/drush" />
+	</target>
+
+	<target name="build" depends="properties">
+	  <drush command="make">
+	    <param>"${WORKSPACE}/${make.file}"</param>
+	    <param>"${WORKSPACE}/${make.dir}"</param>
+	    <param>--contrib-destination=profiles/${profile.name}</param>
+	  </drush>
+	</target>
+
+	<taskdef name="drush" classname="DrushTask" classpath="phingdrushtask"/>
+
+</project>
