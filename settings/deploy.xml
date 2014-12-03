@@ -10,8 +10,7 @@
 
 	<target name="deploy" depends="properties">
 	  <echo msg="Deploying to server" />
-	  <exec command="scp -rq -i ${make.dir} \
-                  ${remote.host}:${remote.path}/builds/`echo ../htdocs/build.txt`" />
+	  <exec command="scp -rq -i ${make.dir} ${remote.host}:${remote.path}/builds/`echo ../htdocs/build.txt`" logoutput="yes" />
     
 	</target>
 
