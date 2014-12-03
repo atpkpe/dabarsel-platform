@@ -6,6 +6,7 @@
 	  <property name="make.dir" value="htdocs" />
 	  <property name="remote.host" value="localhost" />
 	  <property name="remote.path" value="/tmp" />
+	  <property name="remote.drush" value="/usr/local/bin/drush" />
 	  <property name="environment" value="test" />
 	</target>
 
@@ -27,9 +28,36 @@
   	</target>
 
         <taskdef classname="VersionNumberTask" name="versiontask" classpath="phingdrushtask" />
-
         <target name="buildname">
           <versiontask versionprop="build.name"/>
         </target>
+
+       <target name="remote-drush-updb">
+         <ssh username="jenkins" host="${remote.host}"
+            privkeyfile="/home/jenkins/.ssh/id_rsa"
+	    pubkeyfile="/home/jenkins/.ssh/id_rsa.pub"
+	    command="cd ${remote.path}/builds/${build.name}/htdocs/sites/default &amp;&amp; ${remote-drush} updb -y"/>
+       </target>
+
+      <target name="remote-drush-cc-drush">
+        <ssh username="jenkins" host="${remote.host}"
+	    privkeyfile="/home/jenkins/.ssh/id_rsa"
+	    pubkeyfile="/home/jenkins/.ssh/id_rsa.pub"
+	    command="cd ${remote.path}/builds/${build.name}/htdocs/sites/default &amp;&amp; ${remote-drush} cc drush"/>
+      </target>
+
+      <target name="remote-drush-fra">
+        <ssh username="jenkins" host="${remote.host}"
+	    privkeyfile="/home/jenkins/.ssh/id_rsa"
+	    pubkeyfile="/home/jenkins/.ssh/id_rsa.pub"
+	    command="cd ${remote.path}/builds/${build.name}/htdocs/sites/default &amp;&amp; ${remote-drush} fra -y"/>
+      </target>
+
+      <target name="remote-drush-cc-all">
+        <ssh username="jenkins" host="${remote.host}"
+	    privkeyfile="/home/jenkins/.ssh/id_rsa"
+	    pubkeyfile="/home/jenkins/.ssh/id_rsa.pub"
+	    command="cd ${remote.path}/builds/${build.name}/htdocs/sites/default &amp;&amp; ${remote-drush} cc all"/>
+       </target>
 
 </project>
