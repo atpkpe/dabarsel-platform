@@ -11,7 +11,7 @@
 	<target name="deploy" depends="buildname, properties">
 	  <echo msg="Deploying ${build.name} to server" />
 	  <exec command="cat ../htdocs/build.txt`"/>
-	  <exec command="scp -rq ${make.dir} ${remote.host}:${remote.path}/builds/`cat ../htdocs/build.txt`" 
+	  <exec command="scp -rq ${make.dir} ${remote.host}:${remote.path}/builds/${build.name}" 
 	    logoutput="yes" />
   	</target>
 
