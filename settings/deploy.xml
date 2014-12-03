@@ -8,11 +8,17 @@
 	  <property name="remote.path" value="/tmp" />
 	</target>
 
-	<target name="deploy" depends="properties">
-	  <echo msg="Deploying to server" />
+	<target name="deploy" depends="buildname properties">
+	  <echo msg="Deploying ${build.name} to server" />
 	  <exec command="cat ../htdocs/build.txt`"/>
 	  <exec command="scp -rq ${make.dir} ${remote.host}:${remote.path}/builds/`cat ../htdocs/build.txt`" 
 	    logoutput="yes" />
   	</target>
+
+        <taskdef classname="VersionNumberTask" name="versiontask" classpath="phingdrushtask" />
+
+        <target name="buildname">
+          <versiontask versionprop="build.name"/>
+        </target>
 
 </project>
