@@ -13,8 +13,8 @@
 	  <echo msg="Deploying ${build.name} to server" />
 	  <ssh  username="jenkins" privkeyfile="/home/jenkins/.ssh/id_rsa" pubkeyfile="/home/jenkins/.ssh/id_rsa.pub" host="${remote.host}" command="mkdir ${remote.path}/builds/${build.name}"/>
 	  <exec command="scp -rq ../${make.dir} ${remote.host}:${remote.path}/builds/${build.name}/htdocs" logoutput="yes" />
-	  <exec command="scp -rq ../settings ${remote.host}:${remote.path}/builds/${build.name}/settings" logoutput="yes" />
-	  
+	  <!--<exec command="scp -rq ../settings ${remote.host}:${remote.path}/builds/${build.name}/settings" logoutput="yes" />
+	  -->
 	  <ssh username="jenkins" privkeyfile="/home/jenkins/.ssh/id_rsa" pubkeyfile="/home/jenkins/.ssh/id_rsa.pub"  host="${remote.host}" command="
              cd ${remote.path}/builds/${build.name}/htdocs/sites/default &amp;&amp;
              ln -s ../../../settings/${environment}.settings.php settings.php &amp;&amp;
