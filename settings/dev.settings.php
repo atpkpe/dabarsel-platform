@@ -3,10 +3,10 @@
 $databases = array();
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => 'atp_dev',
-  'username' => 'atp_dev',
-  'password' => 'cc83da4c170e865d07b4',
-  'host' => 'atp.mysql.dev.cd.adapt.dk',
+  'database' => 'dabarsel_dev',
+  'username' => 'root',
+  'password' => 'root',
+  'host' => 'localhost',
   'prefix' => '',
 );
 
