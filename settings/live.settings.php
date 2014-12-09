@@ -3,9 +3,9 @@
 $databases = array();
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => 'atpstage_live',
-  'username' => 'atpstage_live',
-  'password' => 'duejCismocodpykDuvjo',
+  'database' => 'dabarsel_live',
+  'username' => 'root',
+  'password' => 'root',
   'host' => 'localhost',
   'prefix' => '',
 );
